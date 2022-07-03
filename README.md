@@ -4,15 +4,15 @@ Discover the future value of the key field of a Meilisearch API key before its g
 
 ```bash
 SUBCOMMANDS:
-    generate-keys     Generate keys field value for a list of UIDs and a master key
+    discover-keys     Discover key fields value for a list of UIDs and a master key
     generate-uuids    Generate uuid(s) V4
     help              Print this message or the help of the given subcommand(s)
 ```
 
-## generate-keys
+## discover-keys
 
 ```bash
-blitz generate-keys master_key d7d30ffe-ec60-484f-84f8-1c8b7d0ac352 c5a18797-621c-42b5-81bd-23fbf0202364
+blitz discover-keys master_key d7d30ffe-ec60-484f-84f8-1c8b7d0ac352 c5a18797-621c-42b5-81bd-23fbf0202364
 ```
 
 ```bash
@@ -22,10 +22,10 @@ blitz generate-keys master_key d7d30ffe-ec60-484f-84f8-1c8b7d0ac352 c5a18797-621
  ```
 
 ```bash
-Generate keys field value for a list of UIDs and a master key
+Discover key fields value for a list of UIDs and a master key
 
 USAGE:
-    blitz generate-keys <MASTER_KEY> [UIDS]...
+    blitz discover-keys <MASTER_KEY> [UIDS]...
 
 ARGS:
     <MASTER_KEY>    Meilisearch master key

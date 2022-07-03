@@ -9,8 +9,8 @@ pub struct Options {
 
 #[derive(Debug, Parser)]
 pub enum Command {
-    /// Generate keys field value for a list of UIDs and a master key.
-    GenerateKeys {
+    /// Discover key fields value for a list of UIDs and a master key
+    DiscoverKeys {
         /// Meilisearch master key
         master_key: String,
         /// API key uids
