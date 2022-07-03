@@ -1,4 +1,4 @@
-Discover the future value of the key field of a Meilisearch API key before its generation to automatize deployments from the ground-up.
+A simple command set to accompany a deterministic use of Meilisearch API keys.
 
 ## Overview
 

@@ -2,7 +2,7 @@
 name = "blitz"
 version = "1.0.0"
 edition = "2021"
-description = "Discover Meilisearch API key values to automatize deployments"
+description = "A simple command set to accompany a deterministic use of Meilisearch API keys."
 readme = "README.md"
 license = "WTFPL"
 repository = "https://github.com/gmourier/blitz"
