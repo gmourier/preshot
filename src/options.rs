@@ -11,9 +11,9 @@ pub struct Options {
 pub enum Command {
     /// Generate key field value
     Generate {
-        /// API key uid
-        uid: String,
         /// Meilisearch master key
-        master_key: String
+        master_key: String,
+        /// API key uids
+        uids: Vec<String>
     }
 }
