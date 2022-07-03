@@ -13,8 +13,8 @@ use prettytable::{format, Cell, Row, Table};
 fn main() {
     let opt = Options::from_args();
     match opt.command {
-        Command::GenerateKeys { master_key, uids } => {
-            generate_keys(master_key, uids);
+        Command::DiscoverKeys { master_key, uids } => {
+            discover_keys(master_key, uids);
         },
         Command::GenerateUuids { count } => {
             generate_uuids(count);
@@ -27,7 +27,7 @@ struct APIKey {
     key: String,
 }
 
-fn generate_keys(master_key: String, uids: Vec<String>) -> () {
+fn discover_keys(master_key: String, uids: Vec<String>) -> () {
     let master_key_sha = Sha256::digest(master_key.as_bytes());
 
     let mut keys: Vec<APIKey> = Vec::new();
