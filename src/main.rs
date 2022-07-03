@@ -13,9 +13,12 @@ use prettytable::{format, Cell, Row, Table};
 fn main() {
     let opt = Options::from_args();
     match opt.command {
-        Command::Generate { master_key, uids } => {
+        Command::GenerateKeys { master_key, uids } => {
             generate_keys(master_key, uids);
-        }
+        },
+        Command::GenerateUuids { count } => {
+            generate_uuids(count);
+        },
     }
 }
 
@@ -62,4 +65,13 @@ fn print_keys(keys: &Vec<APIKey>) -> () {
     }
 
     table.printstd();
+}
+
+/// Generate UUIDv4s
+fn generate_uuids(mut count: usize) -> () {
+    while count > 0 {
+        let uuid = Uuid::new_v4();
+        println!("{}", uuid.to_string());
+        count -= 1;
+    }
 }
