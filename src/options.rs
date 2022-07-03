@@ -16,6 +16,14 @@ pub enum Command {
         /// API key uids
         uids: Vec<String>,
     },
+    /// Generate (uid, key) tuples
+    GenerateKeys {
+        /// Meilisearch master key
+        master_key: String,
+        /// Number of (uid, key) tuple to generate
+        #[clap(default_value = "1")]
+        count: usize,
+    },
     /// Generate uuid(s) V4
     GenerateUuids {
         /// Number of uuids V4 to generate
