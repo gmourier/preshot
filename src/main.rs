@@ -54,8 +54,7 @@ fn print_keys(keys: &Vec<APIKey>) -> () {
     let mut table = Table::new();
     table.set_format(*format::consts::FORMAT_NO_BORDER_LINE_SEPARATOR);
 
-    table.add_row(Row::new(vec![Cell::new("uid"), Cell::new("🔑 key")
-]));
+    table.add_row(Row::new(vec![Cell::new("uid"), Cell::new("🔑 key")]));
 
     for api_key in keys {
         table.add_row(Row::new(vec![
@@ -69,9 +68,28 @@ fn print_keys(keys: &Vec<APIKey>) -> () {
 
 /// Generate UUIDv4s
 fn generate_uuids(mut count: usize) -> () {
+    let mut uuids: Vec<Uuid> = Vec::new();
+
     while count > 0 {
         let uuid = Uuid::new_v4();
-        println!("{}", uuid.to_string());
+        uuids.push(uuid);
         count -= 1;
     }
+
+    print_uuids(&uuids);
+}
+
+fn print_uuids(uuids: &Vec<Uuid>) {
+    let mut table = Table::new();
+    table.set_format(*format::consts::FORMAT_NO_BORDER_LINE_SEPARATOR);
+
+    table.add_row(Row::new(vec![Cell::new("uid")]));
+
+    for uuid in uuids {
+        table.add_row(Row::new(vec![
+            Cell::new(&uuid.to_string())
+        ]));
+    }
+
+    table.printstd();
 }
