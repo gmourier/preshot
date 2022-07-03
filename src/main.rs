@@ -1,26 +1,20 @@
 mod options;
 
-use options::{ Command, Options };
-use structopt::StructOpt;
+use clap::Parser;
+use options::{Command, Options};
 
 use uuid::Uuid;
 
 use hmac::{Hmac, Mac};
 use sha2::{Digest, Sha256};
 
-use prettytable::{ Table, Row, Cell, format };
+use prettytable::{format, Cell, Row, Table};
 
 fn main() {
     let opt = Options::from_args();
     match opt.command {
-        Command::Generate {
-            master_key,
-            uids
-        } => {
-            generate_keys(
-                master_key,
-                uids
-            );
+        Command::Generate { master_key, uids } => {
+            generate_keys(master_key, uids);
         }
     }
 }
@@ -57,15 +51,13 @@ fn print_keys(keys: &Vec<APIKey>) -> () {
     let mut table = Table::new();
     table.set_format(*format::consts::FORMAT_NO_BORDER_LINE_SEPARATOR);
 
-    table.add_row(Row::new(vec![
-        Cell::new("uid"),
-        Cell::new("🔑 key")
-    ]));
+    table.add_row(Row::new(vec![Cell::new("uid"), Cell::new("🔑 key")
+]));
 
     for api_key in keys {
         table.add_row(Row::new(vec![
             Cell::new(&api_key.uid.to_string()),
-            Cell::new(&api_key.key.to_string())
+            Cell::new(&api_key.key.to_string()),
         ]));
     }
 
