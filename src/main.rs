@@ -17,7 +17,7 @@ fn main() {
             master_key,
             uids
         } => {
-            generate_key(
+            generate_keys(
                 master_key,
                 uids
             );
@@ -30,7 +30,7 @@ struct APIKey {
     key: String,
 }
 
-fn generate_key(master_key: String, uids: Vec<String>) -> () {
+fn generate_keys(master_key: String, uids: Vec<String>) -> () {
     let master_key_sha = Sha256::digest(master_key.as_bytes());
 
     let mut keys: Vec<APIKey> = Vec::new();
