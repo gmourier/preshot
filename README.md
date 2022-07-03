@@ -5,6 +5,7 @@ Discover the future value of the key field of a Meilisearch API key before its g
 ```bash
 SUBCOMMANDS:
     discover-keys     Discover key fields value for a list of UIDs and a master key
+    generate-keys     Generate (uid, key) tuples
     generate-uuids    Generate uuid(s) V4
     help              Print this message or the help of the given subcommand(s)
 ```
@@ -30,6 +31,30 @@ USAGE:
 ARGS:
     <MASTER_KEY>    Meilisearch master key
     <UIDS>...       API key uids
+```
+
+## generate-keys
+
+```bash
+blitz generate-keys master_key 3
+```
+
+```bash
+ uid                                  | 🔑 key
+ 672383ed-13a2-49b8-85ac-38e4ad0d2e15 | _jCVH0PtEc0peg-Udi4a7kuSQtVb4tSVyAauN7XIrRA
+ 8e996bfa-e45f-4a3a-8822-32cdba1a4d08 | 2RUx5uZTakePmRIA7jIe8h5JbL3oqxhItt3M5_Br2w8
+ 3cda0331-08ef-4a86-b3bc-8cdaffaf9536 | 6TNv-vbomWl1Trs35qiOqQzeekhyPncZLnYbwYNq73g
+```
+
+```bash
+Generate (uid, key) tuples
+
+USAGE:
+    blitz generate-keys <MASTER_KEY> [COUNT]
+
+ARGS:
+    <MASTER_KEY>    Meilisearch master key
+    <COUNT>         Number of (uid, key) tuple to generate [default: 1]
 ```
 
 ## generate-uuids
