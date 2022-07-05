@@ -13,11 +13,11 @@ keywords = ["meilisearch", "cli", "automation", "continous-deployment"]
 [dependencies]
 sha2 = "0.10.2"
 hmac = "0.12.1"
-base64 = "0.13.0"
 prettytable-rs = "^0.8"
 clap = { version = "3.2.8", features = ["derive"] }
 features = "0.10.0"
 derive = "1.0.0"
+hex = "0.4.3"
 
 [dependencies.uuid]
 version = "1.1.2"
