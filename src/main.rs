@@ -6,7 +6,7 @@ use options::{Command, Options};
 use uuid::Uuid;
 
 use hmac::{Hmac, Mac};
-use sha2::{Digest, Sha256};
+use sha2::{Sha256};
 
 use prettytable::{format, Cell, Row, Table};
 
@@ -31,22 +31,17 @@ struct APIKey {
 }
 
 fn discover_keys(master_key: String, uids: Vec<String>) -> () {
-    let master_key_sha = Sha256::digest(master_key.as_bytes());
-
     let mut keys: Vec<APIKey> = Vec::new();
 
     for uid in uids {
-        let uuid = Uuid::parse_str(&uid).unwrap();
-
-        let mut mac = Hmac::<Sha256>::new_from_slice(master_key_sha.as_slice()).unwrap();
-        mac.update(uuid.as_bytes());
+        let mut mac = Hmac::<Sha256>::new_from_slice(master_key.as_bytes()).unwrap();
+        mac.update(uid.as_bytes());
 
         let result = mac.finalize();
-        let base64 = base64::encode_config(result.into_bytes(), base64::URL_SAFE_NO_PAD);
 
         keys.push(APIKey {
             uid: uid,
-            key: base64,
+            key: format!("{:x}", result.into_bytes()),
         });
     }
 
@@ -54,22 +49,19 @@ fn discover_keys(master_key: String, uids: Vec<String>) -> () {
 }
 
 fn generate_keys(master_key: String, mut count: usize) -> () {
-    let master_key_sha = Sha256::digest(master_key.as_bytes());
-
     let mut keys: Vec<APIKey> = Vec::new();
 
     while count > 0 {
         let uuid = Uuid::new_v4();
 
-        let mut mac = Hmac::<Sha256>::new_from_slice(master_key_sha.as_slice()).unwrap();
+        let mut mac = Hmac::<Sha256>::new_from_slice(master_key.as_bytes()).unwrap();
         mac.update(uuid.as_bytes());
 
         let result = mac.finalize();
-        let base64 = base64::encode_config(result.into_bytes(), base64::URL_SAFE_NO_PAD);
 
         keys.push(APIKey {
             uid: uuid.to_string(),
-            key: base64,
+            key: format!("{:x}", result.into_bytes()),
         });
 
         count -= 1;

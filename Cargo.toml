@@ -13,7 +13,6 @@ keywords = ["meilisearch", "cli", "automation", "continous-deployment"]
 [dependencies]
 sha2 = "0.10.2"
 hmac = "0.12.1"
-base64 = "0.13.0"
 prettytable-rs = "^0.8"
 clap = { version = "3.2.8", features = ["derive"] }
 features = "0.10.0"
@@ -23,6 +22,4 @@ derive = "1.0.0"
 version = "1.1.2"
 features = [
     "v4",                # Lets you generate random UUIDs
-    "fast-rng",          # Use a faster (but still sufficiently random) RNG
-    "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
 ]
