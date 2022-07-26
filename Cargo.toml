@@ -17,12 +17,9 @@ prettytable-rs = "^0.8"
 clap = { version = "3.2.8", features = ["derive"] }
 features = "0.10.0"
 derive = "1.0.0"
-hex = "0.4.3"
 
 [dependencies.uuid]
 version = "1.1.2"
 features = [
     "v4",                # Lets you generate random UUIDs
-    "fast-rng",          # Use a faster (but still sufficiently random) RNG
-    "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
 ]

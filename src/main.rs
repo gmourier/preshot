@@ -41,7 +41,7 @@ fn discover_keys(master_key: String, uids: Vec<String>) -> () {
 
         keys.push(APIKey {
             uid: uid,
-            key: hex::encode(result.into_bytes()),
+            key: format!("{:x}", result.into_bytes()),
         });
     }
 
@@ -61,7 +61,7 @@ fn generate_keys(master_key: String, mut count: usize) -> () {
 
         keys.push(APIKey {
             uid: uuid.to_string(),
-            key: hex::encode(result.into_bytes()),
+            key: format!("{:x}", result.into_bytes()),
         });
 
         count -= 1;
