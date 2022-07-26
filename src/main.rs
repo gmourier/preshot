@@ -4,6 +4,7 @@ use clap::Parser;
 use options::{Command, Options};
 
 use uuid::Uuid;
+use uuid::fmt::Hyphenated;
 
 use hmac::{Hmac, Mac};
 use sha2::{Sha256};
@@ -53,6 +54,9 @@ fn generate_keys(master_key: String, mut count: usize) -> () {
 
     while count > 0 {
         let uuid = Uuid::new_v4();
+
+        let mut uuid_buffer = [0; Hyphenated::LENGTH];
+        let uuid = uuid.hyphenated().encode_lower(&mut uuid_buffer);
 
         let mut mac = Hmac::<Sha256>::new_from_slice(master_key.as_bytes()).unwrap();
         mac.update(uuid.as_bytes());
