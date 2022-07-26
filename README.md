@@ -18,8 +18,8 @@ blitz discover-keys master_key d7d30ffe-ec60-484f-84f8-1c8b7d0ac352 c5a18797-621
 
 ```bash
  uid                                  | 🔑 key
- d7d30ffe-ec60-484f-84f8-1c8b7d0ac352 | h2mHLjq0eu9N6xO4padE3ZRbToQgi1X7IPb7ePQdvHY
- c5a18797-621c-42b5-81bd-23fbf0202364 | MeU0XSwYywmYnMNUJpg5Degyqk_QqKIWQcyIDf4Z-YM
+ d7d30ffe-ec60-484f-84f8-1c8b7d0ac352 | 623359df9ea4d4a6c676c329c793191601ce7dd15541c2394277eae26aeedf1e
+ c5a18797-621c-42b5-81bd-23fbf0202364 | 9decc7baffbed2fa9b9cfa599c3d72ecf8db3fad02b65941caa378e824299482
  ```
 
 ```bash
@@ -41,9 +41,9 @@ blitz generate-keys master_key 3
 
 ```bash
  uid                                  | 🔑 key
- 672383ed-13a2-49b8-85ac-38e4ad0d2e15 | _jCVH0PtEc0peg-Udi4a7kuSQtVb4tSVyAauN7XIrRA
- 8e996bfa-e45f-4a3a-8822-32cdba1a4d08 | 2RUx5uZTakePmRIA7jIe8h5JbL3oqxhItt3M5_Br2w8
- 3cda0331-08ef-4a86-b3bc-8cdaffaf9536 | 6TNv-vbomWl1Trs35qiOqQzeekhyPncZLnYbwYNq73g
+ 3cc1b0bf-cd20-4a9e-b6b3-f807dc084809 | 573570a095d46fd53ca10419d7ecc01e7247215a2644dbf5d706c0b06eaa02cd
+ 9d92afc7-cc0c-48d9-80da-eb5af536407b | c6709163458f20017fe085ce8e89053b17a3a8e710eaa203a96dcc83b7228c90
+ 89292f1b-83ac-4e96-a414-814e85c99b52 | 73491c15fd8dc77ad82a44eee0802c3faf27b639a4c08baf782f366af9f12832
 ```
 
 ```bash
