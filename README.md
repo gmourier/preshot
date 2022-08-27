@@ -13,7 +13,7 @@ SUBCOMMANDS:
 ## discover-keys
 
 ```bash
-blitz discover-keys master_key d7d30ffe-ec60-484f-84f8-1c8b7d0ac352 c5a18797-621c-42b5-81bd-23fbf0202364
+blitz discover-keys masterKey d7d30ffe-ec60-484f-84f8-1c8b7d0ac352 c5a18797-621c-42b5-81bd-23fbf0202364
 ```
 
 ```bash
@@ -36,7 +36,7 @@ ARGS:
 ## generate-keys
 
 ```bash
-blitz generate-keys master_key 3
+blitz generate-keys masterKey 3
 ```
 
 ```bash

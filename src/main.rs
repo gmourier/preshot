@@ -3,11 +3,11 @@ mod options;
 use clap::Parser;
 use options::{Command, Options};
 
-use uuid::Uuid;
 use uuid::fmt::Hyphenated;
+use uuid::Uuid;
 
 use hmac::{Hmac, Mac};
-use sha2::{Sha256};
+use sha2::Sha256;
 
 use prettytable::{format, Cell, Row, Table};
 
@@ -16,13 +16,13 @@ fn main() {
     match opt.command {
         Command::DiscoverKeys { master_key, uids } => {
             discover_keys(master_key, uids);
-        },
+        }
         Command::GenerateKeys { master_key, count } => {
             generate_keys(master_key, count);
         }
         Command::GenerateUuids { count } => {
             generate_uuids(count);
-        },
+        }
     }
 }
 
@@ -109,11 +109,8 @@ fn print_uuids(uuids: &Vec<Uuid>) {
     table.add_row(Row::new(vec![Cell::new("uid")]));
 
     for uuid in uuids {
-        table.add_row(Row::new(vec![
-            Cell::new(&uuid.to_string())
-        ]));
+        table.add_row(Row::new(vec![Cell::new(&uuid.to_string())]));
     }
 
     table.printstd();
 }
-
