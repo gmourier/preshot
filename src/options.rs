@@ -29,5 +29,5 @@ pub enum Command {
         /// Number of uuids V4 to generate
         #[clap(default_value = "1")]
         count: usize,
-    }
+    },
 }
