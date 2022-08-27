@@ -78,21 +78,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "blitz"
-version = "1.0.0"
-dependencies = [
- "assert_cmd",
- "clap",
- "derive",
- "features",
- "hmac",
- "predicates",
- "prettytable-rs",
- "sha2",
- "uuid",
-]
-
-[[package]]
 name = "block-buffer"
 version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -451,6 +436,21 @@ checksum = "4d86de6de25020a36c6d3643a86d9a6a9f552107c0559c60ea03551b5e16c032"
 dependencies = [
  "predicates-core",
  "termtree",
+]
+
+[[package]]
+name = "preshot"
+version = "1.0.0"
+dependencies = [
+ "assert_cmd",
+ "clap",
+ "derive",
+ "features",
+ "hmac",
+ "predicates",
+ "prettytable-rs",
+ "sha2",
+ "uuid",
 ]
 
 [[package]]

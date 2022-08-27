@@ -13,11 +13,11 @@ jobs:
         os: [ubuntu-latest, macos-latest]
         include:
           - os: ubuntu-latest
-            artifact_name: blitz
-            asset_name: blitz-linux-amd64
+            artifact_name: preshot
+            asset_name: preshot-linux-amd64
           - os: macos-latest
-            artifact_name: blitz
-            asset_name: blitz-macos-amd64
+            artifact_name: preshot
+            asset_name: preshot-macos-amd64
 
     steps:
       - uses: hecrj/setup-rust-action@master
@@ -58,8 +58,8 @@ jobs:
         uses: svenstaro/upload-release-action@v1-release
         with:
           repo_token: ${{ secrets.PUBLISH_TOKEN }}
-          file: target/release/blitz
-          asset_name: blitz-linux-armv8
+          file: target/release/preshot
+          asset_name: preshot-linux-armv8
           tag: ${{ github.ref }}
 
   publish-crates-io:

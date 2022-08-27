@@ -13,7 +13,7 @@ SUBCOMMANDS:
 ## discover-keys
 
 ```bash
-blitz discover-keys masterKey d7d30ffe-ec60-484f-84f8-1c8b7d0ac352 c5a18797-621c-42b5-81bd-23fbf0202364
+preshot discover-keys masterKey d7d30ffe-ec60-484f-84f8-1c8b7d0ac352 c5a18797-621c-42b5-81bd-23fbf0202364
 ```
 
 ```bash
@@ -26,7 +26,7 @@ blitz discover-keys masterKey d7d30ffe-ec60-484f-84f8-1c8b7d0ac352 c5a18797-621c
 Discover key fields value for a list of UIDs and a master key
 
 USAGE:
-    blitz discover-keys <MASTER_KEY> [UIDS]...
+    preshot discover-keys <MASTER_KEY> [UIDS]...
 
 ARGS:
     <MASTER_KEY>    Meilisearch master key
@@ -36,7 +36,7 @@ ARGS:
 ## generate-keys
 
 ```bash
-blitz generate-keys masterKey 3
+preshot generate-keys masterKey 3
 ```
 
 ```bash
@@ -50,7 +50,7 @@ blitz generate-keys masterKey 3
 Generate (uid, key) tuples
 
 USAGE:
-    blitz generate-keys <MASTER_KEY> [COUNT]
+    preshot generate-keys <MASTER_KEY> [COUNT]
 
 ARGS:
     <MASTER_KEY>    Meilisearch master key
@@ -60,7 +60,7 @@ ARGS:
 ## generate-uuids
 
 ```bash
-blitz generate-uuids 3
+preshot generate-uuids 3
 ```
 
 ```bash
@@ -73,7 +73,7 @@ b94505dd-2ed0-4c6c-a079-088e93bceb26
 Generate uuid(s) V4
 
 USAGE:
-    blitz generate-uuids [COUNT]
+    preshot generate-uuids [COUNT]
 
 ARGS:
     <COUNT>    Number of uuids V4 to generate [default: 1]

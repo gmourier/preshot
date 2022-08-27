@@ -1,11 +1,11 @@
 [package]
-name = "blitz"
+name = "preshot"
 version = "1.0.0"
 edition = "2021"
 description = "A simple command set to accompany a deterministic use of Meilisearch API keys."
 readme = "README.md"
 license = "WTFPL"
-repository = "https://github.com/gmourier/blitz"
+repository = "https://github.com/gmourier/preshot"
 keywords = ["meilisearch", "cli", "automation", "continous-deployment"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
