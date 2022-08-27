@@ -31,7 +31,7 @@ struct APIKey {
     key: String,
 }
 
-fn discover_keys(master_key: String, uids: Vec<String>) -> () {
+fn discover_keys(master_key: String, uids: Vec<String>) {
     let mut keys: Vec<APIKey> = Vec::new();
 
     for uid in uids {
@@ -41,7 +41,7 @@ fn discover_keys(master_key: String, uids: Vec<String>) -> () {
         let result = mac.finalize();
 
         keys.push(APIKey {
-            uid: uid,
+            uid,
             key: format!("{:x}", result.into_bytes()),
         });
     }
@@ -49,7 +49,7 @@ fn discover_keys(master_key: String, uids: Vec<String>) -> () {
     print_keys(&keys);
 }
 
-fn generate_keys(master_key: String, mut count: usize) -> () {
+fn generate_keys(master_key: String, mut count: usize) {
     let mut keys: Vec<APIKey> = Vec::new();
 
     while count > 0 {
@@ -74,7 +74,7 @@ fn generate_keys(master_key: String, mut count: usize) -> () {
     print_keys(&keys);
 }
 
-fn print_keys(keys: &Vec<APIKey>) -> () {
+fn print_keys(keys: &Vec<APIKey>) {
     let mut table = Table::new();
     table.set_format(*format::consts::FORMAT_NO_BORDER_LINE_SEPARATOR);
 
@@ -90,7 +90,7 @@ fn print_keys(keys: &Vec<APIKey>) -> () {
     table.printstd();
 }
 
-fn generate_uuids(mut count: usize) -> () {
+fn generate_uuids(mut count: usize) {
     let mut uuids: Vec<Uuid> = Vec::new();
 
     while count > 0 {
