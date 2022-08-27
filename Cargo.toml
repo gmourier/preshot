@@ -1,6 +1,6 @@
 [package]
 name = "preshot"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2021"
 description = "A simple command set to accompany a deterministic use of Meilisearch API keys."
 readme = "README.md"
