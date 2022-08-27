@@ -6,6 +6,29 @@ const BINARY_NAME: &str = "blitz";
 const MASTER_KEY: &str = "masterKey";
 
 #[test]
+fn discover_keys_missing_master_key() -> Result<(), Box<dyn std::error::Error>> {
+    let mut cmd = Command::cargo_bin(BINARY_NAME)?;
+
+    cmd.arg("discover-keys");
+
+    cmd.assert().failure();
+
+    Ok(())
+}
+
+#[test]
+#[ignore] //TODO: Add a control check to throw an error if the UIDS arg is missing
+fn discover_keys_missing_uids() -> Result<(), Box<dyn std::error::Error>> {
+    let mut cmd = Command::cargo_bin(BINARY_NAME)?;
+
+    cmd.arg("discover-keys").arg(MASTER_KEY);
+
+    cmd.assert().failure();
+
+    Ok(())
+}
+
+#[test]
 fn discover_keys_single() -> Result<(), Box<dyn std::error::Error>> {
     let mut cmd = Command::cargo_bin(BINARY_NAME)?;
 
@@ -36,5 +59,72 @@ fn discover_keys_multiple() -> Result<(), Box<dyn std::error::Error>> {
     cmd.assert()
         .success()
         .stdout(predicate::str::contains(expected));
+
+    Ok(())
+}
+
+#[test]
+fn generate_keys_single() -> Result<(), Box<dyn std::error::Error>> {
+    let mut cmd = Command::cargo_bin(BINARY_NAME)?;
+
+    cmd.arg("generate-keys").arg(MASTER_KEY);
+
+    cmd.assert().success();
+
+    Ok(())
+}
+
+#[test]
+fn generate_keys_multiple() -> Result<(), Box<dyn std::error::Error>> {
+    let mut cmd = Command::cargo_bin(BINARY_NAME)?;
+
+    cmd.arg("generate-keys").arg(MASTER_KEY).arg("10");
+
+    cmd.assert().success();
+
+    Ok(())
+}
+
+#[test]
+fn generate_keys_multiple_misstyped_count_arg() -> Result<(), Box<dyn std::error::Error>> {
+    let mut cmd = Command::cargo_bin(BINARY_NAME)?;
+
+    cmd.arg("generate-keys").arg(MASTER_KEY).arg("dummy");
+
+    cmd.assert().failure();
+
+    Ok(())
+}
+
+#[test]
+fn generate_uuids() -> Result<(), Box<dyn std::error::Error>> {
+    let mut cmd = Command::cargo_bin(BINARY_NAME)?;
+
+    cmd.arg("generate-uuids");
+
+    cmd.assert().success();
+
+    Ok(())
+}
+
+#[test]
+fn generate_uuids_multiple() -> Result<(), Box<dyn std::error::Error>> {
+    let mut cmd = Command::cargo_bin(BINARY_NAME)?;
+
+    cmd.arg("generate-uuids").arg("10");
+
+    cmd.assert().success();
+
+    Ok(())
+}
+
+#[test]
+fn generate_uuids_misstyped_count_arg() -> Result<(), Box<dyn std::error::Error>> {
+    let mut cmd = Command::cargo_bin(BINARY_NAME)?;
+
+    cmd.arg("generate-uuids").arg("dummy");
+
+    cmd.assert().failure();
+
     Ok(())
 }
