@@ -116,4 +116,3 @@ fn print_uuids(uuids: &Vec<Uuid>) {
 
     table.printstd();
 }
-
