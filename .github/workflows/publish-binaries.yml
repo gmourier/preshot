@@ -33,7 +33,7 @@ jobs:
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v1-release
         with:
-          repo_token: ${{ secrets.PUBLISH_TOKEN }}
+          repo_token: ${{ github.token }}
           file: target/release/${{ matrix.artifact_name }}
           asset_name: ${{ matrix.asset_name }}
           tag: ${{ github.ref }}
@@ -57,7 +57,7 @@ jobs:
       - name: Upload the binary to release
         uses: svenstaro/upload-release-action@v1-release
         with:
-          repo_token: ${{ secrets.PUBLISH_TOKEN }}
+          repo_token: ${{ github.token }}
           file: target/release/preshot
           asset_name: preshot-linux-armv8
           tag: ${{ github.ref }}
